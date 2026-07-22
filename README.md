@@ -183,6 +183,4 @@ UPES, Dehradun
 
 ### Empowering Communities Through Technology
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
-
 </div>
