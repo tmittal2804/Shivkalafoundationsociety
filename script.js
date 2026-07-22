@@ -1,8 +1,3 @@
-/* =============================================
-   SKFS — Shiv Kala Foundation Society
-   script.js — Production-ready JavaScript
-   ============================================= */
-
 'use strict';
 
 /* ─── Loader ─── */
