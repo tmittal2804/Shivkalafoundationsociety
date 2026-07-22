@@ -14,8 +14,6 @@
 
 **Live Demo:** https://shivkalafoundation.netlify.app/
 
-> Replace the above URL with your deployed Netlify website.
-
 ---
 
 ## Overview
