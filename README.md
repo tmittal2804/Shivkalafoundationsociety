@@ -10,7 +10,7 @@
 
 ---
 
-## 🌐 Live Website
+## 🌐 Demo
 
 **Live Demo:** https://shivkalafoundation.netlify.app/
 
