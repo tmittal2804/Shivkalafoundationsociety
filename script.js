@@ -7,11 +7,11 @@ function hideLoader() {
     loader.classList.add('hidden');
   }
 }
-// Always hide after 2.5s max — prevents stuck loader if images fail
+
 setTimeout(hideLoader, 2500);
-// Hide as soon as everything loads
+
 window.addEventListener('load', () => setTimeout(hideLoader, 300));
-// Immediate fallback if page already loaded
+
 if (document.readyState === 'complete') setTimeout(hideLoader, 300);
 
 
@@ -22,17 +22,17 @@ const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
 
-  // Navbar style
+  
   if (mainNav) {
     mainNav.classList.toggle('scrolled', y > 40);
   }
 
-  // Back to top
+  
   if (backToTop) {
     backToTop.classList.toggle('visible', y > 400);
   }
 
-  // Active nav link highlighting
+  
   highlightNavLink();
 }, { passive: true });
 
@@ -40,7 +40,7 @@ backToTop?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* ─── Active nav link on scroll ─── */
+
 function highlightNavLink() {
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -59,14 +59,14 @@ function highlightNavLink() {
   });
 }
 
-/* ─── Smooth scroll for nav links ─── */
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Close mobile menu
+  
     const bsCollapse = document.getElementById('navMenu');
     if (bsCollapse?.classList.contains('show')) {
       const toggler = document.querySelector('.navbar-toggler');
@@ -75,7 +75,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ─── Hero particles ─── */
+
 (function createParticles() {
   const container = document.getElementById('particles');
   if (!container) return;
@@ -100,7 +100,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 })();
 
-/* ─── Animated counter ─── */
+
 function animateCounter(el) {
   const target = +el.dataset.target;
   const duration = 2200;
@@ -118,7 +118,6 @@ function animateCounter(el) {
   }, step);
 }
 
-/* ─── Intersection Observer: counters + reveal ─── */
 const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
 
 const counterObserver = new IntersectionObserver((entries) => {
@@ -148,7 +147,7 @@ document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el 
   revealObserver.observe(el);
 });
 
-/* ─── Volunteer Form ─── */
+// Volunteer Form
 const volunteerForm = document.getElementById('volunteerForm');
 const volunteerSuccess = document.getElementById('volunteerSuccess');
 
@@ -159,7 +158,6 @@ volunteerForm?.addEventListener('submit', function (e) {
     return;
   }
 
-  // Simulate form submission
   const btn = this.querySelector('button[type="submit"]');
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
@@ -170,7 +168,7 @@ volunteerForm?.addEventListener('submit', function (e) {
   }, 1400);
 });
 
-/* ─── Intern Form ─── */
+// Intern Form
 const internForm = document.getElementById('internForm');
 const internSuccess = document.getElementById('internSuccess');
 
@@ -191,7 +189,7 @@ internForm?.addEventListener('submit', function (e) {
   }, 1400);
 });
 
-/* ─── Contact Form ─── */
+// Contact Form 
 const contactForm = document.getElementById('contactForm');
 const contactSuccess = document.getElementById('contactSuccess');
 
@@ -212,7 +210,7 @@ contactForm?.addEventListener('submit', function (e) {
   }, 1400);
 });
 
-/* ─── Newsletter Form ─── */
+// Newsletter Form
 const newsletterForm = document.getElementById('newsletterForm');
 const nlSuccess = document.getElementById('nlSuccess');
 
@@ -233,7 +231,7 @@ newsletterForm?.addEventListener('submit', function (e) {
   }, 800);
 });
 
-/* ─── Gallery: accessibility, filtering, lightbox ─── */
+
 const galleryGrid = document.getElementById('galleryGrid');
 const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
 const filterBtns = document.querySelectorAll('.gallery-filter-btn');
@@ -272,7 +270,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-/* ─── Lightbox ─── */
 const lightboxOverlay = document.getElementById('lightboxOverlay');
 const lightboxImage = document.getElementById('lightboxImage');
 const lightboxCaption = document.getElementById('lightboxCaption');
@@ -333,7 +330,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') lightboxNext.click();
 });
 
-/* ─── Init ─── */
 document.addEventListener('DOMContentLoaded', () => {
   highlightNavLink();
 });
